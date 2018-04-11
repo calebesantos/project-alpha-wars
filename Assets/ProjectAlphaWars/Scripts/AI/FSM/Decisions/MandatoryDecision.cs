@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "PluggableAI/Decisions/Attack")]
+[CreateAssetMenu(menuName = "PluggableAI/Decisions/Mandatory")]
 public class MandatoryDecision : Decision
 {
     //Decisão para atacar
@@ -12,6 +12,6 @@ public class MandatoryDecision : Decision
 
     private bool Mandatory(StateController stateController)
     {
-        return stateController.chaseTarget == null;
+        return stateController.chaseTarget != null && stateController.chaseTarget.gameObject.activeSelf;
     }
 }
