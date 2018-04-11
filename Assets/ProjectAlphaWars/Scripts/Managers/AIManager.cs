@@ -19,6 +19,13 @@ public class AIManager : MonoBehaviour
         loadVariables();
     }
 
+    void Update()
+    {
+        SpawnNewItemTroop();
+    }
+
+    #endregion
+
     private void loadVariables()
     {
         troopManager = gameObject.GetComponent<TroopManager>();
@@ -28,11 +35,6 @@ public class AIManager : MonoBehaviour
             cameraControl = gameManager.m_CameraControl;
     }
 
-    void Update()
-    {
-        SpawnNewItemTroop();
-    }
-
     /// <summary>
     /// Lógica para se deverá iniciar um novo item de tropa e qual será selecionado
     /// - Avaliar se é possível ainda enviar mais alguém da tropa
@@ -40,15 +42,11 @@ public class AIManager : MonoBehaviour
     /// </summary>
     private void SpawnNewItemTroop()
     {
-        Debug.Log("Enter");
         if (!troopManager.SpawnItemTroopEnabled || m_base.Busy)
             return;
 
-        Debug.Log("Pass");
         troopManager.Spawn();
     }
-
-    #endregion
 
 
     private void SetCameraTargets()
