@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Name: PlayerAttack
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: e07f0350a252d104e9d9e74890bf0472, type: 2}
   - {fileID: 11400000, guid: 4610852ab1d49134badc9a64257a0f6d, type: 2}
+  - {fileID: 11400000, guid: e07f0350a252d104e9d9e74890bf0472, type: 2}
   transitions:
   - decision: {fileID: 11400000, guid: 9dc83a017e53b1540bcd6f39c4cdb6a9, type: 2}
-    trueState: {fileID: 11400000, guid: 9487c88e5e55217458a73993ef201001, type: 2}
-    falseState: {fileID: 11400000, guid: 1d96ccd2482cbad45be86ad62340c828, type: 2}
+    trueState: {fileID: 11400000, guid: 1d96ccd2482cbad45be86ad62340c828, type: 2}
+    falseState: {fileID: 11400000, guid: 9487c88e5e55217458a73993ef201001, type: 2}
   sceneGizmoColor: {r: 1, g: 0, b: 0, a: 1}

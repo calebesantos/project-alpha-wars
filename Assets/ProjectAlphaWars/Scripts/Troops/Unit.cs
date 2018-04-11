@@ -44,6 +44,11 @@ public class Unit : MonoBehaviour
             {
                 var navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
                 navMeshAgent.SetDestination(destination);
+                if (stateController.chaseTarget != null && stateController.chaseTarget.gameObject.activeSelf)
+                {
+                    Debug.Log("Teste");
+                    stateController.chaseTarget = null;
+                }
             }
         }
     }

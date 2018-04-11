@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "PluggableAI/Actions/Chase")]
 public class ChaseAction : Action
@@ -12,9 +10,13 @@ public class ChaseAction : Action
 
     private void Chase(StateController stateController)
     {
-        stateController.navMeshAgent.destination = stateController.chaseTarget.position;
         stateController.navMeshAgent.stoppingDistance = 10;
-        stateController.navMeshAgent.isStopped = false;
         stateController.navMeshAgent.angularSpeed = 200;
+
+        if (stateController.chaseTarget == null || !stateController.chaseTarget.gameObject.activeSelf)
+            return;
+
+        stateController.navMeshAgent.destination = stateController.chaseTarget.position;
+        stateController.navMeshAgent.isStopped = false;
     }
 }
