@@ -1,4 +1,5 @@
 using Complete;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,10 +10,16 @@ public class Unit : MonoBehaviour
     public Color m_DefaultColor;
 
     private MeshRenderer[] renderers;
+    private StateController stateController;
 
     void Start()
     {
         renderers = GetComponentsInChildren<MeshRenderer>();
+        stateController = GetComponent<StateController>();
+        if (stateController)
+        {
+            stateController.SetupAI(true, new List<Transform>());
+        }
     }
 
     void Update()

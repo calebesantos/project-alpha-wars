@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "PluggableAI/Decisions/Attack")]
+[CreateAssetMenu(menuName = "PluggableAI/Decisions/Mandatory")]
 public class MandatoryDecision : Decision
 {
     //Decisão para atacar

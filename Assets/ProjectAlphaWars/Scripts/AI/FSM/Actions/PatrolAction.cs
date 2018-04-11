@@ -12,6 +12,7 @@ public class PatrolAction : Action
     {
         var navMeshAgent = stateController.navMeshAgent;
         navMeshAgent.destination = stateController.wayPointList[stateController.nextWayPoint].position;
+        navMeshAgent.stoppingDistance = 3;
         navMeshAgent.isStopped = false;
         navMeshAgent.angularSpeed = 200;
 
