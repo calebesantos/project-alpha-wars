@@ -13,7 +13,7 @@ public class ChaseAction : Action
     private void Chase(StateController stateController)
     {
         stateController.navMeshAgent.destination = stateController.chaseTarget.position;
-        stateController.navMeshAgent.stoppingDistance = 8;
+        stateController.navMeshAgent.stoppingDistance = 10;
         stateController.navMeshAgent.isStopped = false;
         stateController.navMeshAgent.angularSpeed = 200;
     }

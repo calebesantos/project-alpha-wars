@@ -12,6 +12,6 @@ public class MandatoryDecision : Decision
 
     private bool Mandatory(StateController stateController)
     {
-        return stateController.chaseTarget == null;
+        return stateController.chaseTarget != null && stateController.chaseTarget.gameObject.activeSelf;
     }
 }
