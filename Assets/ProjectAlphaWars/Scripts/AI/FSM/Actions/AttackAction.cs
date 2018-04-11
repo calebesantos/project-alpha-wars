@@ -18,7 +18,7 @@ public class AttackAction : Action
 
         if (stateController.CheckIfCountDownElapsed(stateController.enemyStats.attackRate))
         {
-            //stateController.tankShooting.Fire(stateController.enemyStats.attackForce, stateController.enemyStats.attackRate);
+            stateController.tankShooting.Fire(stateController.enemyStats.attackForce, stateController.enemyStats.attackRate);
         }
     }
 }
