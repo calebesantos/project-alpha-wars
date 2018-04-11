@@ -1,28 +1,32 @@
+using Complete;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Unit : MonoBehaviour
 {
     public bool selected = false;
-    private Renderer render;
+    public Color m_SelectedColor;
+    public Color m_DefaultColor;
+
+    private MeshRenderer[] renderers;
 
     void Start()
     {
-        render = GetComponent<Renderer>();
+        renderers = GetComponentsInChildren<MeshRenderer>();
     }
 
     void Update()
     {
-        if (isElementVisible() && Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             var camPos = Camera.main.WorldToScreenPoint(transform.position);
             camPos.y = RectSelection.InvertMouseY(camPos.y);
             selected = RectSelection.selection.Contains(camPos);
 
-            if (selected)
-                render.material.color = Color.red;
-            else
-                render.material.color = Color.white;
+            Color playerColor = selected ? m_SelectedColor : m_DefaultColor;
+
+            for (int i = 0; i < renderers.Length; i++)
+                renderers[i].material.color = playerColor;
         }
 
         if (selected && Input.GetMouseButtonUp(1))
@@ -35,11 +39,6 @@ public class Unit : MonoBehaviour
                 navMeshAgent.SetDestination(destination);
             }
         }
-    }
-
-    private bool isElementVisible()
-    {
-        return render.isVisible;
     }
 
     private Vector3 GetDestination()
