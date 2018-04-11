@@ -9,16 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 089a5817e7824004abbcb9cb879e781b, type: 3}
-  m_Name: ChaseChaser
+  m_Name: AttackChaser
   m_EditorClassIdentifier: 
   actions:
   - {fileID: 11400000, guid: e07f0350a252d104e9d9e74890bf0472, type: 2}
   - {fileID: 11400000, guid: 4610852ab1d49134badc9a64257a0f6d, type: 2}
   transitions:
-  - decision: {fileID: 11400000, guid: 8c99d5523fff6af49bfd2aa8b39097e7, type: 2}
-    trueState: {fileID: 11400000, guid: 1d96ccd2482cbad45be86ad62340c828, type: 2}
-    falseState: {fileID: 11400000, guid: bd815a95e96da8a479eebd9ab69a5931, type: 2}
   - decision: {fileID: 11400000, guid: 3ce0d22340846cf41aa1f6d3edbb962c, type: 2}
-    trueState: {fileID: 11400000, guid: 4dc7779e9bc613d4cb560a2690485154, type: 2}
-    falseState: {fileID: 11400000, guid: 1d96ccd2482cbad45be86ad62340c828, type: 2}
-  sceneGizmoColor: {r: 0.8161765, g: 0.7598884, b: 0, a: 1}
+    trueState: {fileID: 11400000, guid: 1d96ccd2482cbad45be86ad62340c828, type: 2}
+    falseState: {fileID: 11400000, guid: 8c3fc958f25643f40af24dd6b238ad65, type: 2}
+  sceneGizmoColor: {r: 1, g: 0, b: 0, a: 1}
