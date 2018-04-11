@@ -1,4 +1,5 @@
-﻿using Complete;
+﻿using System;
+using Complete;
 using UnityEngine;
 
 public class AIManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class AIManager : MonoBehaviour
     private GameManager gameManager;
     private CameraControl cameraControl;
     private TroopManager troopManager;
+    private int index = 0;
 
     #region unity methods
 
@@ -45,9 +47,8 @@ public class AIManager : MonoBehaviour
         if (!troopManager.SpawnItemTroopEnabled || m_base.Busy)
             return;
 
-        troopManager.Spawn();
+        troopManager.Spawn(index++);
     }
-
 
     private void SetCameraTargets()
     {

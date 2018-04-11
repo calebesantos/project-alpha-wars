@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089a5817e7824004abbcb9cb879e781b, type: 3}
   m_Name: PlayerUnit
   m_EditorClassIdentifier: 
-  actions: []
+  actions:
+  - {fileID: 11400000, guid: a521808afc54ca045a5bec47730dbff7, type: 2}
   transitions:
   - decision: {fileID: 11400000, guid: b8d337d9b2e4a944d861e05e058ad844, type: 2}
     trueState: {fileID: 11400000, guid: 4dc7779e9bc613d4cb560a2690485154, type: 2}

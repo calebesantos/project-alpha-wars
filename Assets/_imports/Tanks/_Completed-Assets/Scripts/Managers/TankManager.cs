@@ -15,6 +15,9 @@ namespace Complete
 
         public Color m_PlayerColor;                             // This is the color this tank will be tinted.
         public Transform m_SpawnPoint;                          // The position and direction the tank will have when it spawns.
+        public GameObject m_TankPrefab;
+        public List<Transform> wayPointsList;
+
         [HideInInspector] public int m_PlayerNumber;            // This specifies which player this the manager for.
         [HideInInspector] public string m_ColoredPlayerText;    // A string that represents the player with their number colored to match their tank.
         [HideInInspector] public GameObject m_Instance;         // A reference to the instance of the tank when it is created.
@@ -26,10 +29,10 @@ namespace Complete
         private GameObject m_CanvasGameObject;                  // Used to disable the world space UI during the Starting and Ending phases of each round.
 		private StateController m_StateController;				// Reference to the StateController for AI tanks
 
-		public void SetupAI(List<Transform> wayPointList)
+		public void SetupAI()
 		{
 			m_StateController = m_Instance.GetComponent<StateController> ();
-			m_StateController.SetupAI (true, wayPointList);
+			m_StateController.SetupAI (true, wayPointsList);
 
 			m_Shooting = m_Instance.GetComponent<TankShooting> ();
 			m_Shooting.m_PlayerNumber = m_PlayerNumber;

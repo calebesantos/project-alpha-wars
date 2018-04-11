@@ -11,6 +11,11 @@ public class BaseManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Busy");
+        Debug.Log("Enter");
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Busy = false;
     }
 }
