@@ -87,5 +87,17 @@ namespace Complete
             // Turn the tank off.
             gameObject.SetActive (false);
         }
+
+        public void HealthIncrease(float value)
+        {
+            if(m_CurrentHealth < m_StartingHealth)
+                m_CurrentHealth += value;
+
+            if (m_CurrentHealth > m_StartingHealth)
+                m_CurrentHealth = m_StartingHealth;
+
+            SetHealthUI();
+        }
+           
     }
 }
