@@ -9,6 +9,7 @@ public class ActiveStateDecision : Decision
     //Pouca vida (Nesse caso volta para a base)
     public override bool Decide(StateController stateController)
     {
-        return stateController.navMeshAgent.remainingDistance <= 30;
+        return stateController.chaseTarget.gameObject.activeSelf
+                && stateController.navMeshAgent.remainingDistance <= 30;
     }
 }
