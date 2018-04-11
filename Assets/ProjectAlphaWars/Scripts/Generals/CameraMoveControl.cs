@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class CameraMoveControl : MonoBehaviour
 {
-
     public float panSpeed = 30f;
     public float panBorderThickness = 15f;
 
     public float scrollSpeed = 5f;
     public float minScrollY = 10f;
     public float maxScrollY = 80f;
+
+    public float maxPositionX = 30f;
+    public float minPositionX = -30f;
+    public float maxPositionZ = 10f;
+    public float minPositionZ = -53f;
 
 
     void Update()
@@ -21,19 +25,23 @@ public class CameraMoveControl : MonoBehaviour
     {
         if (Input.GetKey("w") || IsMouseAtScreenTop())
         {
-            transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
+            if (gameObject.transform.position.z <= maxPositionZ)
+                transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
         }
         if (Input.GetKey("s") || IsMouseAtScreenBottom())
         {
-            transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
+            if (gameObject.transform.position.z >= minPositionZ)
+                transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
         }
         if (Input.GetKey("a") || IsMouseAtScreenLeft())
         {
-            transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
+            if (gameObject.transform.position.x >= minPositionX)
+                transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }
         if (Input.GetKey("d") || IsMouseAtScreenRight())
         {
-            transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
+            if (gameObject.transform.position.x <= maxPositionX)
+                transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
         }
     }
 
