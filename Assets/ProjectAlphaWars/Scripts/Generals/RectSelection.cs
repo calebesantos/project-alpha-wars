@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class RectSelection : MonoBehaviour
 {
-    public Texture2D selectionHighlight;
     public static Rect selection = new Rect(0, 0, 0, 0);
     private Vector3 startClick = -Vector3.one;
 
@@ -52,7 +51,7 @@ public class RectSelection : MonoBehaviour
         if (startClick != -Vector3.one)
         {
             GUI.color = new Color(1, 1, 1, 0.5f);
-            GUI.DrawTexture(selection, selectionHighlight);
+            GUI.DrawTexture(selection, Texture2D.whiteTexture);
         }
     }
 
